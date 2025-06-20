@@ -1,0 +1,11 @@
+toolbox/
+│
+├── main.py              # Main menu GUI
+├── tools/
+│   ├── __init__.py
+│   ├── network_scanner.py
+│   ├── password_generator.py
+│   └── system_info.py
+├── assets/
+│   └── icon.png         # (Optional) For GUI icon or images
+└── README.md            # (Optional) Project notes

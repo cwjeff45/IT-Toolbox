@@ -1,0 +1,67 @@
+import tkinter as tk
+import socket
+import uuid
+import psutil
+import os
+
+def run_ipconfig():
+    os.system("ipconfig")
+
+def get_network_info():
+    info = {}
+    hostname = socket.gethostname()
+    ip_address = socket.gethostbyname(hostname)
+    mac = ':'.join(['{:02x}'.format((uuid.getnode() >> i) & 0xff) for i in range(0, 8*6, 8)][::-1])
+
+    info["Hostname"] = hostname
+    info["Local IP"] = ip_address
+    info["MAC Address"] = mac
+
+    # Use psutil to get additional network info
+    for interface, addrs in psutil.net_if_addrs().items():
+        for addr in addrs:
+            if addr.family == socket.AF_INET:
+                info["Interface"] = interface
+                info["Subnet Mask"] = addr.netmask
+            elif addr.family == psutil.AF_LINK:
+                info["MAC (from psutil)"] = addr.address
+
+    # Use psutil for default gateway
+    gws = psutil.net_if_stats()
+    for name, stats in psutil.net_if_stats().items():
+        if stats.isup:
+            break
+
+    try:
+        info["Default Gateway"] = psutil.net_if_addrs()[interface][0].address
+    except:
+        info["Default Gateway"] = "Unknown"
+
+    return info
+
+def display_info():
+    info = get_network_info()
+    for widget in frame.winfo_children():
+        widget.destroy()
+
+    for key, value in info.items():
+        label = tk.Label(frame, text=f"{key}: {value}", anchor='w', bg="#1e1e1e", fg="white", font=("Segoe UI", 10))
+        label.pack(fill='x', padx=10, pady=2)
+
+# GUI Setup
+root = tk.Tk()
+root.title("IP Config Viewer")
+root.geometry("500x300")
+root.configure(bg="#1e1e1e")
+
+tk.Label(root, text="IP Configuration", font=("Segoe UI", 14, "bold"), bg="#1e1e1e", fg="cyan").pack(pady=10)
+
+frame = tk.Frame(root, bg="#1e1e1e")
+frame.pack(fill='both', expand=True)
+
+tk.Button(root, text="Refresh", command=display_info).pack(pady=5)
+
+display_info()
+root.mainloop()
+if __name__ == "__main__":
+    run_ipconfig()
