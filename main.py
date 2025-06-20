@@ -5,6 +5,8 @@ import time
 from Tools.IPConfig import run_ipconfig
 from Tools.PCHealth import HealthCheck
 from Tools.SysInfo import run_SI
+import tkinter as tk
+from tkinter import messagebox
 
 greeted = False
 version = '1.1'
@@ -28,7 +30,7 @@ def clear():
 
 def greeting(dur = 3, length = 30):
     print(f"""
-                    v {version}
+    v {version}
 *      . +    o. '    . +.  +*   +  .    * '. +.
 ' _|_ .+    . + .  + +++.    +      ''  '+  .
  . | o'      . |  IT TOOLBOX  .'   o           ++

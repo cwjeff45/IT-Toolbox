@@ -49,17 +49,16 @@ def display_info(frame):
 
 # GUI Setup
 def IPGUI():
-    root = tk.Tk()
-    root.title("IP Config Viewer")
-    root.geometry("500x300")
-    root.configure(bg="#1e1e1e")
+    win = tk.Toplevel()
+    win.title("IPConfig Tool")
+    win.geometry("500x300")
+    win.configure(bg="#1e1e1e")
 
-    tk.Label(root, text="IP Configuration", font=("Segoe UI", 14, "bold"), bg="#1e1e1e", fg="cyan").pack(pady=10)
+    tk.Label(win, text="IP Configuration", font=("Segoe UI", 14, "bold"), bg="#1e1e1e", fg="cyan").pack(pady=10)
 
-    frame = tk.Frame(root, bg="#1e1e1e")
+    frame = tk.Frame(win, bg="#1e1e1e")
     frame.pack(fill='both', expand=True)
 
     display_info(frame)
     
-    tk.Button(root, text="Refresh", command=display_info(frame)).pack(pady=5)
-    root.mainloop()
+    tk.Button(win, text="Refresh", command=lambda: display_info(frame)).pack(pady=5)

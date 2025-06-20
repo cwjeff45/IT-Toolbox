@@ -41,6 +41,6 @@ def SIGUI():
     frame = tk.Frame(root, bg="#1e1e1e")
     frame.pack(fill='both', expand=True)
 
-#display_info()
-#root.mainloop()
+    display_info(frame)
+    root.mainloop()
 

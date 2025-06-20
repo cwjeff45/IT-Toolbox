@@ -9,3 +9,11 @@ toolbox/
 ├── assets/
 │   └── icon.png         # (Optional) For GUI icon or images
 └── README.md            # (Optional) Project notes
+
+
+//How to push commit (yes I'm new lmao)
+
+git status
+git add .
+git commit -m "xxxxx"
+git push origin main
