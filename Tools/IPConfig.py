@@ -2,7 +2,6 @@ import tkinter as tk
 import socket
 import uuid
 import psutil
-import os
 
 def run_ipconfig():
     IPGUI()

@@ -1,6 +1,7 @@
 #toolbox main menu
 
 from Tools.IPConfig import run_ipconfig
+from Tools.PCHealth import HealthCheck
 
 #reutrn to menu - asks the user if they want to return to main Toolbox Menu
 def menu():
@@ -46,7 +47,7 @@ def test1():
     menu()
 
 def test2():
-    print("Test 2 Open")
+    HealthCheck()
     menu()
 
 def test3():
