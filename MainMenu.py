@@ -86,7 +86,7 @@ def stop_rain(canvas):
 rain_active = False
 rain_ids = []
 #functionality for rain on/off
-def toggle_rain(canvas, height, width):
+def toggle_rain(canvas, height, width, toggle_btn):
     global rain_active
     #toggle_btn = None
     rain_active = not rain_active
