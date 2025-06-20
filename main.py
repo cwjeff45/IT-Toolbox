@@ -1,8 +1,8 @@
 #toolbox main menu
 
-#NOT WORKING. EXECUTES IPCONFIG ON RUN***************
 from Tools.IPConfig import run_ipconfig
 
+#reutrn to menu - asks the user if they want to return to main Toolbox Menu
 def menu():
     print("Return to main menu? (y/n)")
     ans = input().lower()
@@ -15,23 +15,12 @@ def menu():
         print("Invalid input (y/n)")
         return
 
-def test1():
-    run_ipconfig()
-    menu()
-
-def test2():
-    print("Test 2 Open")
-    menu()
-
-def test3():
-    print("Test 3 Open")
-    menu()
-
+#Menu that asks for input and options
 def main():
     while True:
         print("Toolbox")
         dir = input("""
-1) test 1
+1) IPConfig
 2) test 2
 3) test 3
 
@@ -50,6 +39,19 @@ x) Exit
             exit()
         else:
             print("Invalid input. Please enter '1, 2, 3 or x'")
+
+#menu options that call to 
+def test1():
+    run_ipconfig()
+    menu()
+
+def test2():
+    print("Test 2 Open")
+    menu()
+
+def test3():
+    print("Test 3 Open")
+    menu()
 
 if __name__ == "__main__":
     main()

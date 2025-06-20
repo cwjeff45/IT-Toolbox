@@ -5,7 +5,7 @@ import psutil
 import os
 
 def run_ipconfig():
-    os.system("ipconfig")
+    IPGUI()
 
 def get_network_info():
     info = {}
@@ -39,7 +39,7 @@ def get_network_info():
 
     return info
 
-def display_info():
+def display_info(frame):
     info = get_network_info()
     for widget in frame.winfo_children():
         widget.destroy()
@@ -49,19 +49,18 @@ def display_info():
         label.pack(fill='x', padx=10, pady=2)
 
 # GUI Setup
-root = tk.Tk()
-root.title("IP Config Viewer")
-root.geometry("500x300")
-root.configure(bg="#1e1e1e")
+def IPGUI():
+    root = tk.Tk()
+    root.title("IP Config Viewer")
+    root.geometry("500x300")
+    root.configure(bg="#1e1e1e")
 
-tk.Label(root, text="IP Configuration", font=("Segoe UI", 14, "bold"), bg="#1e1e1e", fg="cyan").pack(pady=10)
+    tk.Label(root, text="IP Configuration", font=("Segoe UI", 14, "bold"), bg="#1e1e1e", fg="cyan").pack(pady=10)
 
-frame = tk.Frame(root, bg="#1e1e1e")
-frame.pack(fill='both', expand=True)
+    frame = tk.Frame(root, bg="#1e1e1e")
+    frame.pack(fill='both', expand=True)
 
-tk.Button(root, text="Refresh", command=display_info).pack(pady=5)
-
-display_info()
-root.mainloop()
-if __name__ == "__main__":
-    run_ipconfig()
+    display_info(frame)
+    
+    tk.Button(root, text="Refresh", command=display_info(frame)).pack(pady=5)
+    root.mainloop()
