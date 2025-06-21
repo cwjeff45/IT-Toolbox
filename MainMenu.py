@@ -5,6 +5,7 @@ import random
 from Tools.IPConfig import run_ipconfig
 from Tools.PCHealth import HealthCheck
 from Tools.SysInfo import run_SI
+from Tools.PortScan import scanner_GUI, PSGUI
 import tkinter as tk
 from tkinter import messagebox
 
@@ -13,6 +14,9 @@ version = '1.1'
 #test function for buttons until app functionality is added
 def placeholder():
     print("Button pressed")
+
+def launch_port_scanner():
+    PSGUI()
 
 #when app is opened, this header will run with the loading bar
 def show_greeting(root, callback):
@@ -174,7 +178,7 @@ def launch_toolbox():
         ("IPConfig", run_ipconfig),
         ("PC Health Check", HealthCheck),
         ("System Info", run_SI),
-        ("Tool 4", placeholder),
+        ("Port Scanner", scanner_GUI),
         ("Tool 5", placeholder),
         ("Tool 6", placeholder),
         ("Tool 7", placeholder),
