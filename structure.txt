@@ -1,15 +1,17 @@
 toolbox/
-│
-├── main.py              # Main menu GUI
-├── tools/
-│   ├── __init__.py
-│   ├── network_scanner.py
-│   ├── password_generator.py
-│   └── system_info.py
+├── Tools/
+│   ├── IPConfig.py
+│   ├── PCHealth.py
+│   └── ...
+├── MainMenu.py
+├── main.py (CMD test menu)
+├── structure.txt
 ├── assets/
-│   └── icon.png         # (Optional) For GUI icon or images
-└── README.md            # (Optional) Project notes
-
+│   └── icon.png
+├── web/                  
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
 
 //How to push commit (yes I'm new lmao)
 
