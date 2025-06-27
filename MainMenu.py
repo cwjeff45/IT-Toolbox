@@ -22,6 +22,8 @@ def launch_sweeper():
 def launch_port_scanner():
     PSGUI()
 
+
+
 #when app is opened, this header will run with the loading bar
 def show_greeting(root, callback):
     greeting_win = tk.Toplevel(root)
@@ -33,11 +35,12 @@ def show_greeting(root, callback):
 
     text = f"""
 v {version}
-*      . +    o. '    . +.  +*   +  .    * '. +.
-' _|_ .+    . + .  + +++.    +      ''  '+  .
- . | o'      . |  IT TOOLBOX  .'   o           ++
-    .        - o -  o ' .    +_|_ '+ '+       /
-'   +  +' +.  . |        '   '  |       .   ' *
+ ___ _____   _____           _ _               
+|_ _|_   _| |_   _|__   ___ | | |__   _____  __
+ | |  | |     | |/ _ \ / _ \| | '_ \ / _ \ \/ /
+ | |  | |     | | (_) | (_) | | |_) | (_) >  < 
+|___| |_|     |_|\___/ \___/|_|_.__/ \___/_/\_\\
+
     """
     label = tk.Label(greeting_win, text=text, fg="lime", bg="black", font=("Courier", 9))
     label.pack(pady=10)
@@ -173,10 +176,26 @@ def launch_toolbox():
         "pady": 5
     }
 
-    tk.Label(window, text="IT Toolbox", font=("Segoe UI", 16, "bold"), fg="lime", bg="black").pack(pady=(10, 20))
+    tk.Label(window, text=r"""
+ ___ _____   _____           _ _               
+|_ _|_   _| |_   _|__   ___ | | |__   _____  __
+ | |  | |     | |/ _ \ / _ \| | '_ \ / _ \ \/ /
+ | |  | |     | | (_) | (_) | | |_) | (_) >  < 
+|___| |_|     |_|\___/ \___/|_|_.__/ \___/_/\_\\
+             """, font=("Courier", 12), fg="lime", bg="black", justify="left").pack(pady=(10, 20))
 
     button_frame = tk.Frame(window, bg="black")
     button_frame.pack()
+
+    clock_label = tk.Label(window, font=("Courier", 12), fg="lime", bg="black")
+    clock_label.pack(pady=(0, 20))
+
+    def update_clock():
+        current_time = time.strftime("%I:%M:%S %p")
+        clock_label.config(text=f"Time: {current_time}")
+        window.after(1000, update_clock)
+
+    update_clock()
 
     tools = [
         ("IPConfig", run_ipconfig),
