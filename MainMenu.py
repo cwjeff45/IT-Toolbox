@@ -6,6 +6,7 @@ from Tools.IPConfig import run_ipconfig
 from Tools.PCHealth import HealthCheck
 from Tools.SysInfo import run_SI
 from Tools.PortScan import scanner_GUI, PSGUI
+from Tools.SystemSweeper import run_cleanup_gui
 import tkinter as tk
 from tkinter import messagebox
 
@@ -14,6 +15,9 @@ version = '1.1'
 #test function for buttons until app functionality is added
 def placeholder():
     print("Button pressed")
+
+def launch_sweeper():
+    run_cleanup_gui()
 
 def launch_port_scanner():
     PSGUI()
@@ -179,7 +183,7 @@ def launch_toolbox():
         ("PC Health Check", HealthCheck),
         ("System Info", run_SI),
         ("Port Scanner", scanner_GUI),
-        ("Tool 5", placeholder),
+        ("System Sweeper", launch_sweeper),
         ("Tool 6", placeholder),
         ("Tool 7", placeholder),
         ("Tool 8", placeholder),
