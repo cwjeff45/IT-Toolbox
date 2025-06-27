@@ -1,11 +1,16 @@
+#Application to display basic system network information
+
 import tkinter as tk
 import socket
 import uuid
 import psutil
 
+#Function called in MainMenu.py that initiates the GUI prior to running the application
 def run_ipconfig():
     IPGUI()
 
+
+#function to pull network info from PC
 def get_network_info():
     info = {}
     hostname = socket.gethostname()
@@ -38,6 +43,7 @@ def get_network_info():
 
     return info
 
+#displays the information in the GUi
 def display_info(frame):
     info = get_network_info()
     for widget in frame.winfo_children():

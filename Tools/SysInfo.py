@@ -1,3 +1,5 @@
+#Simple app that displays basic device information in one place
+
 import tkinter as tk
 import platform
 import psutil
@@ -5,6 +7,8 @@ import socket
 import uuid
 import shutil
 
+
+#Function called in MainMenu.py that initiates the GUI prior to running the 'get' function
 def run_SI():
     SIGUI()
 

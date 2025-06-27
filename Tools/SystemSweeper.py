@@ -1,9 +1,12 @@
+#Deletes TEMP/TMP files with an option to clean out Recycle Bin
+
 import os 
 import shutil 
 import tkinter as tk
 from tkinter import messagebox
 import ctypes 
 
+#Searches standard path for TEMP and TMP files for removal
 def get_temp_paths():
     return [
         os.environ.get('TEMP'),
@@ -11,6 +14,8 @@ def get_temp_paths():
         r'C:\Windows\Temp' 
     ]
 
+
+#Deletes detected temp files and optionally empties Recycle Bin
 def delete_temp_files():
     deleted_files = 0
     deleted_folders = 0
@@ -32,6 +37,7 @@ def delete_temp_files():
 def empty_recycle_bin():
     ctypes.windll.shell32.SHEmptyRecycleBinW(None, None, 0x00000007)
 
+#Displays status of app and completion details
 def run_cleanup_gui():
     root = tk.Tk()
     root.title("System Sweeper")

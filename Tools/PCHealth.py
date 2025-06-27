@@ -1,10 +1,16 @@
+#Process that checks basic system health by determining CPU usage, memory usage, and disk usage
+#Looking to expand in the future for more in depth diagnostics and 'health rating' system
+
 import tkinter as tk
 import psutil
 import shutil
 
+#Function called in MainMenu.py to initiate GUI prior to running the 'health check'
 def HealthCheck():
     HCGUI()
 
+
+#Function that pulls information to display
 def get_system_health():
     cpu = psutil.cpu_percent(interval=1)
     ram = psutil.virtual_memory()
@@ -40,5 +46,7 @@ def HCGUI():
 
     tk.Button(root, text="Refresh", command=update_info(frame)).pack(pady=5)
 
+
+#***Calling these functions led to the application running prior to the GUI***
 #update_info()
 #root.mainloop()

@@ -1,11 +1,17 @@
+#Simple application that scans through all ports to display open/closed status
+
 import tkinter as tk
 from tkinter import scrolledtext
 import socket
 from threading import Thread
 
+
+#Function called in MainMenu.py to initiate the GUI prior to running the application
 def scanner_GUI():
     PSGUI()
 
+
+#Function that iterates over the ports and determines their status
 def scan_ports():
     target = ip_entry.get()
     try:
