@@ -7,6 +7,7 @@ from Tools.PCHealth import HealthCheck
 from Tools.SysInfo import run_SI
 from Tools.PortScan import scanner_GUI, PSGUI
 from Tools.SystemSweeper import run_cleanup_gui
+from Tools.PWGenerator import gen_gui
 import tkinter as tk
 from tkinter import messagebox
 
@@ -22,7 +23,8 @@ def launch_sweeper():
 def launch_port_scanner():
     PSGUI()
 
-
+def launch_pw():
+    gen_gui()
 
 #when app is opened, this header will run with the loading bar
 def show_greeting(root, callback):
@@ -203,7 +205,8 @@ def launch_toolbox():
         ("System Info", run_SI),
         ("Port Scanner", scanner_GUI),
         ("System Sweeper", launch_sweeper),
-        ("Tool 6", placeholder),
+        ("""Password
+Generator""", gen_gui),
         ("Tool 7", placeholder),
         ("Tool 8", placeholder),
         ("Tool 9", placeholder)
