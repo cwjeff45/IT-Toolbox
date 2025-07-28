@@ -3,15 +3,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>IT Toolbox App</title>
+  <h1 class="main_title">IT TOOLBOX</h1>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>IT Toolbox</h1>
+  <h1>ABOUT</h1>
   <p>A powerful IT utility suite with network tools, diagnostics, and more!</p>
 
   <h2>Features</h2>
-  <ul>
+  <ul class="centered-list">
     <li>IP Config Viewer</li>
     <li>System Health Check</li>
     <li>Port Scanner</li>
@@ -21,5 +21,18 @@
   <a href="../dist/ToolboxInstaller.exe" download>Download Toolbox v1.0</a>
 
   <script src="script.js"></script>
+
+<!-- Hamburger menu button -->
+<div class="hamburger" onclick="toggleMenu()">
+  ☰
+</div>
+
+<!-- Slide-out menu -->
+<div id="sideMenu" class="side-menu">
+  <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+  <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+  <a href="#contact">Contact</a>
+</div>
+
 </body>
 </html>
