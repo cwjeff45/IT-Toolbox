@@ -1,4 +1,5 @@
 import os
+import subprocess
 import sys
 import time
 import random
@@ -35,13 +36,13 @@ def show_greeting(root, callback):
     greeting_win.configure(bg="black")
     greeting_win.protocol("WM_DELETE_WINDOW", root.quit)
 
-    text = f"""
+    text = r"""
 v {version}
  ___ _____   _____           _ _               
 |_ _|_   _| |_   _|__   ___ | | |__   _____  __
  | |  | |     | |/ _ \ / _ \| | '_ \ / _ \ \/ /
  | |  | |     | | (_) | (_) | | |_) | (_) >  < 
-|___| |_|     |_|\___/ \___/|_|_.__/ \___/_/\_\\
+|___| |_|     |_|\___/ \___/|_|_.__/ \___/_/\_\
 
     """
     label = tk.Label(greeting_win, text=text, fg="lime", bg="black", font=("Courier", 9))
