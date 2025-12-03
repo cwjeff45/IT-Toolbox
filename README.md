@@ -18,15 +18,10 @@ Each Python tool lives in the `Tools/` folder and is built to help with everyday
 | `PWGenerator.py`  | Generates secure random passwords.                                         |
 | `SysInfo.py`      | Retrieves system specs and environment info.                              |
 | `SystemSweeper.py`| Performs basic system cleanup tasks (temp files, cache).                   |
-
----
-
-## 🌐 Web Front-End
-
-The `web/` folder contains a simple webpage that includes:
-- A breakdown of each tool
-- Potential tools to come
-- Links to other projects and webpages made by me!
+| `PWGenerator.py`  | Simple tool to assist creating passwords by setting specific criteria      |
+| `cleanUp.py`      | Deep system cleanup tool. (DISM, SFC, Defender scan, Defrag, etc.          |
+| `Drivers.py`      | Check tool for basic driver update verification and BIOS version           |
+| `SystemReport.py` | Detailed system report. (OS, workgroup, basic specs, Make/Model, etc.)     |
 
 ---
 
@@ -42,6 +37,6 @@ This is a **work in progress**. I'm planning to:
 
 ## 💬 Feedback Welcome!
 
-If you have ideas, suggestions, or find any bugs — feel free to [open an issue](https://github.com/YOUR_USERNAME/IT-Toolbox/issues) or fork the repo.
+If you have ideas, suggestions, or find any bugs — feel free to [open an issue](https://github.com/cwjeff45/IT-Toolbox/issues) or fork the repo.
 
 Thanks for checking it out!
